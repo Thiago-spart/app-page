@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-  <title>Disciplinas - Minha escola</title>
+  <title>Pais - Minha escola</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -53,7 +53,7 @@
               <p>Turmas</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item ">
             <a class="nav-link" href="./alunos.html">
               <i class="material-icons">perm_identity</i>
               <p>Alunos</p>
@@ -65,7 +65,7 @@
               <p>Disciplinas</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="./pais.html">
               <i class="material-icons">contact_mail</i>
               <p>Pais</p>
@@ -86,7 +86,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Disciplinas</a>
+            <a class="navbar-brand" href="javascript:;">Pais</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
