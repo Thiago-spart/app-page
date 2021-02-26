@@ -115,6 +115,13 @@
               <div class="card">
                 <div class="card-header card-header-warning">
                   <h4 class="card-title">Alunos</h4>
+                  <p class="card-category">
+                    <a 
+                      href="#"
+                      data-toggle="modal" 
+                      data-target="#addModal"
+                    >Adicionar</a>
+                  </p>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
@@ -122,57 +129,88 @@
                       <th>Matrícula</th>
                       <th>Nome</th>
                       <th>Turma</th>
+                      <th><!-- Delete --></th>
                     </thead>
                     <tbody>
                       <tr>
                         <td>2021al011</td>
                         <td>Marcos Dives</td>
                         <td>7° Ano D</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>2021al012</td>
                         <td>Roberto Perereira</td>
                         <td>9° Ano B</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>2021al013</td>
                         <td>Jhon Kenan</td>
                         <td>6° Ano C</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>2021al014</td>
                         <td>Emanuel Lima</td>
                         <td>7° Ano A</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>2021al015</td>
                         <td>José Eduardo</td>
                         <td>7° Ano B</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>2021al016</td>
                         <td>Izadora Freitas</td>
                         <td>5° Ano B</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>2021al017</td>
                         <td>Allysson Guimarões</td>
                         <td>2° Ano D</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>2021al018</td>
                         <td>Fernada Coelho</td>
                         <td>8° Ano A</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>2021al019</td>
                         <td>Debora Marquines</td>
                         <td>1° Ano C</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>2021al020</td>
                         <td>José Jason</td>
                         <td>3° Ano A</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -180,6 +218,49 @@
               </div>
             </div>
           </div>
+          <!-- Modal Adicionar -->
+          <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="addModalLabel">Novo</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    
+                    <div class="col-md-11 mr-auto ml-auto mb-2">
+                      <div class="form-group label-floating has-warning">
+                        <label class="control-label">Nome</label>
+                          <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-5 ml-auto">
+                      <div class="form-group label-floating has-warning">
+                        <label class="control-label">Matrícula</label>
+                          <input type="text" class="form-control" />
+                      </div>
+                    </div>
+
+                    <div class="col-md-5 mr-auto ml-auto">
+                      <div class="form-group label-floating has-warning">
+                        <label class="control-label">Turma</label>
+                          <input type="text" class="form-control" />
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn btn-warning">Adicionar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /Modal Adicionar -->
         </div>
       </div>
       <footer class="footer">

@@ -115,6 +115,13 @@
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title">Pais</h4>
+                  <p class="card-category">
+                    <a 
+                      href="#"
+                      data-toggle="modal" 
+                      data-target="#addModal"
+                    >Adicionar</a>
+                  </p>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
@@ -122,47 +129,72 @@
                       <th>Telefone</th>
                       <th>Nome</th>
                       <th>Filhos</th>
+                      <th><!-- Delete --></th>
                     </thead>
                     <tbody>
                       <tr>
                         <td>(00) 0000-0000</td>
                         <td>Diego dos Santos</td>
                         <td>5</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>(00) 0000-0000</td>
                         <td>Gabriel</td>
                         <td>3</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>(00) 0000-0000</td>
                         <td>Maria</td>
                         <td>1</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>(00) 0000-0000</td>
                         <td>Dennis</td>
                         <td>3</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>(00) 0000-0000</td>
                         <td>Claudia</td>
                         <td>1</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>(00) 0000-0000</td>
                         <td>José</td>
                         <td>7</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>(00) 0000-0000</td>
                         <td>Kanon</td>
                         <td>2</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                       <tr>
                         <td>(00) 0000-0000</td>
                         <td>Maicon</td>
                         <td>3</td>
+                        <td class="text-danger">
+                          <i class="material-icons">close</i>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -170,6 +202,49 @@
               </div>
             </div>
           </div>
+          <!-- Modal Adicionar -->
+          <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="addModalLabel">Novo</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    
+                    <div class="col-md-11 mr-auto ml-auto mb-2">
+                      <div class="form-group label-floating has-primary">
+                        <label class="control-label">Nome</label>
+                          <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-5 ml-auto">
+                      <div class="form-group label-floating has-primary">
+                        <label class="control-label">Telefone</label>
+                          <input type="number" class="form-control" />
+                      </div>
+                    </div>
+
+                    <div class="col-md-5 mr-auto ml-auto">
+                      <div class="form-group label-floating has-primary">
+                        <label class="control-label">Filhos</label>
+                          <input type="number" class="form-control" />
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Adicionar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /Modal Adicionar -->
         </div>
       </div>
       <footer class="footer">
