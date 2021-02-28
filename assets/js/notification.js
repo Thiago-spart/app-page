@@ -1,25 +1,25 @@
 /*  Consumo da API
 async function getContent() {
-	try {
-		const response = await fetch('https://')	
-		//console.log(response)
-		const data = await response.json()
-		
-		show(data)
-	} catch(error) {
-		console.error(error);
-	}
+  try {
+    const response = await fetch('https://')  
+    //console.log(response)
+    const data = await response.json()
+    
+    show(data)
+  } catch(error) {
+    console.error(error);
+  }
 }
 
 function show(users) {
-	[user1, user2, user3]
-	let output = ''
+  [user1, user2, user3]
+  let output = ''
 
-	for (let user of users) {
-		output += `<li>${user.name}</li>`
-	}
+  for (let user of users) {
+    output += `<li>${user.name}</li>`
+  }
 
-	document.querySelector('main').innerHTML = output
+  document.querySelector('main').innerHTML = output
 }
 */
 
@@ -27,6 +27,9 @@ const Utils = {
   formatDate(date){
     const splittedDate = date.split("-");
     return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
+  },
+  checkBox(box) {
+    return box !== "" ? "Importante" : ""
   }
 }
 
@@ -54,21 +57,20 @@ const Notification = {
   }
 }
 
+/*Notifications*/
 const DOM = {
 	container: document.querySelector('#data-table tbody'),
 	
 	newNotification(notification, index) {
     const tr = document.createElement('tr');
     tr.dataset.index = index;
-    console.log(notification)
     tr.innerHTML = this.innerHTMLNotification(notification, index);
     this.container.appendChild(tr)
   },
 
 	innerHTMLNotification(notification, index) {
 		const { title, date, important } = notification
-    console.log(notification)
-		const check = notification.important != '' ? "Importante" : ""  
+		const check = notification.important !== "" ? "Importante" : ""  
 		const html = `
     <td>1</td>
     <td>${date}</td>
@@ -92,41 +94,46 @@ const DOM = {
 const Form = {
 	title: document.querySelector('input#title'),
   important: document.querySelector('input#important'),
+  description: document.querySelector('textarea#description'),
   date: document.querySelector('input#date'),
-
   getValues() {
     return {
       title: this.title.value,
       important: this.important.value,
+      description: this.description.value,
       date: this.date.value,
     }
   },
 
   validateFields() {
-    const { title, date } = this.getValues();
+    const { title, date, description } = this.getValues();
 
-    if(title.trim() === "" || date.trim() === "") {
+    if(title.trim() === "" || date.trim() === "" || description.trim() === "") {
       throw new Error("Preencha os campos necessarios")
     }
   },
 
   formatValues() {
-    let { title, date, important } = this.getValues()
+    let { title, date, important, description } = this.getValues()
 
     date = Utils.formatDate(date)
+    
+    important = Utils.checkBox(important)
 
     return {
       title, 
-      date, 
+      date,
+      description, 
       important
     }
     
   },
 
   clearFields() {
-    this.title.value = "";
-    this.important.value = "";
-    this.date.value = "";
+    this.title.value = ""
+    this.important.value = ""
+    this.description.value = ""
+    this.date.value = ""
   },
 
   submit(event) {
@@ -145,6 +152,7 @@ const Form = {
     }
   }
 }
+/*Notifications*/
 
 const App = {
   init() {
@@ -158,5 +166,6 @@ const App = {
     this.init();
   }
 }
+
 
 App.init()

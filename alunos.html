@@ -1,4 +1,4 @@
-° Ano<!doctype html>
+<!doctype html>
 <html lang="pt-br">
 
 <head>
@@ -124,7 +124,7 @@
                   </p>
                 </div>
                 <div class="card-body table-responsive">
-                  <table class="table table-hover">
+                  <table id="data-table" class="table table-hover">
                     <thead class="text-warning">
                       <th>Matrícula</th>
                       <th>Nome</th>
@@ -132,86 +132,6 @@
                       <th><!-- Delete --></th>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>2021al011</td>
-                        <td>Marcos Dives</td>
-                        <td>7° Ano D</td>
-                        <td class="text-danger">
-                          <i class="material-icons">close</i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2021al012</td>
-                        <td>Roberto Perereira</td>
-                        <td>9° Ano B</td>
-                        <td class="text-danger">
-                          <i class="material-icons">close</i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2021al013</td>
-                        <td>Jhon Kenan</td>
-                        <td>6° Ano C</td>
-                        <td class="text-danger">
-                          <i class="material-icons">close</i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2021al014</td>
-                        <td>Emanuel Lima</td>
-                        <td>7° Ano A</td>
-                        <td class="text-danger">
-                          <i class="material-icons">close</i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2021al015</td>
-                        <td>José Eduardo</td>
-                        <td>7° Ano B</td>
-                        <td class="text-danger">
-                          <i class="material-icons">close</i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2021al016</td>
-                        <td>Izadora Freitas</td>
-                        <td>5° Ano B</td>
-                        <td class="text-danger">
-                          <i class="material-icons">close</i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2021al017</td>
-                        <td>Allysson Guimarões</td>
-                        <td>2° Ano D</td>
-                        <td class="text-danger">
-                          <i class="material-icons">close</i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2021al018</td>
-                        <td>Fernada Coelho</td>
-                        <td>8° Ano A</td>
-                        <td class="text-danger">
-                          <i class="material-icons">close</i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2021al019</td>
-                        <td>Debora Marquines</td>
-                        <td>1° Ano C</td>
-                        <td class="text-danger">
-                          <i class="material-icons">close</i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2021al020</td>
-                        <td>José Jason</td>
-                        <td>3° Ano A</td>
-                        <td class="text-danger">
-                          <i class="material-icons">close</i>
-                        </td>
-                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -229,33 +149,36 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <div class="row">
+                  <form class="row" action="" onsubmit="Form.submit(event)">
                     
                     <div class="col-md-11 mr-auto ml-auto mb-2">
                       <div class="form-group label-floating has-warning">
-                        <label class="control-label">Nome</label>
-                          <input type="text" class="form-control" />
+                        <label class="control-label" for="studentName">Nome</label>
+                          <input type="text" id="studentName" class="form-control" />
                       </div>
                     </div>
                     <div class="col-md-5 ml-auto">
                       <div class="form-group label-floating has-warning">
-                        <label class="control-label">Matrícula</label>
-                          <input type="text" class="form-control" />
+                        <label class="control-label" for="studentLogin">Matrícula</label>
+                          <input type="text" id="studentLogin" class="form-control" />
                       </div>
                     </div>
 
                     <div class="col-md-5 mr-auto ml-auto">
                       <div class="form-group label-floating has-warning">
-                        <label class="control-label">Turma</label>
-                          <input type="text" class="form-control" />
+                        <label class="control-label" for="classRoomName">Turma</label>
+                          <input type="text" id="classRoomName" class="form-control" />
                       </div>
                     </div>
 
-                  </div>
+                    <div class=" col-md-3 ml-3">
+                      <button type="submit" class=" btn btn-warning">Adicionar</button>
+                    </div>
+
+                  </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="submit" class="btn btn-warning">Adicionar</button>
+                  <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
                 </div>
               </div>
             </div>
@@ -327,6 +250,7 @@
       <script src="./assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
 
       <script src="./assets/demo/demo.js"></script>
+      <script src="./assets/js/students.js"></script>
     </div>
   </div>
 </body>

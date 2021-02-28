@@ -1,0 +1,9 @@
+
+Alunos :
+
+mátrucula 	nome			turma
+2021al011 |	Marcos Dives | 7° Ano D
+
+turma 
+id		nome
+7D		7° Ano D

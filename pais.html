@@ -124,7 +124,7 @@
                   </p>
                 </div>
                 <div class="card-body table-responsive">
-                  <table class="table table-hover">
+                  <table id="data-table" class="table table-hover">
                     <thead class="text-primary">
                       <th>Telefone</th>
                       <th>Nome</th>
@@ -213,33 +213,34 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <div class="row">
+                  <form class="row" action="" onsubmit="Form.submit(event)">
                     
                     <div class="col-md-11 mr-auto ml-auto mb-2">
                       <div class="form-group label-floating has-primary">
-                        <label class="control-label">Nome</label>
-                          <input type="text" class="form-control" />
+                        <label class="control-label" for="parentsName">Nome</label>
+                          <input type="text" id="parentsName" class="form-control" />
                       </div>
                     </div>
                     <div class="col-md-5 ml-auto">
                       <div class="form-group label-floating has-primary">
-                        <label class="control-label">Telefone</label>
-                          <input type="number" class="form-control" />
+                        <label class="control-label" for="parentsTel">Telefone</label>
+                          <input type="tel" id="parentsTel" class="form-control" />
                       </div>
                     </div>
 
                     <div class="col-md-5 mr-auto ml-auto">
                       <div class="form-group label-floating has-primary">
-                        <label class="control-label">Filhos</label>
-                          <input type="number" class="form-control" />
+                        <label class="control-label" for="childrenNum">Filhos</label>
+                          <input type="number" id="childrenNum" class="form-control" />
                       </div>
                     </div>
-
-                  </div>
+                    <div class=" col-md-3 ml-3">
+                      <button type="submit" class=" btn btn-primary">Adicionar</button>
+                    </div>
+                  </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="submit" class="btn btn-primary">Adicionar</button>
                 </div>
               </div>
             </div>
@@ -311,6 +312,7 @@
       <script src="./assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
 
       <script src="./assets/demo/demo.js"></script>
+      <script src="./assets/js/parents.js"></script>
     </div>
   </div>
 </body>
