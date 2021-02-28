@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- Material Kit CSS -->
-  <link href="assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+  <link href="./assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
 </head>
 
 <body>
@@ -125,7 +125,7 @@
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table">
+                    <table id="data-table" class="table">
                       <thead class=" text-warning">
                         <th>Código</th>
                         <th>Data</th>
@@ -134,68 +134,7 @@
                         <th><!--Delete--></th>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>dd/mm/aaaa</td>
-                          <td>Notificação 1</td>
-                          <td>1</td>
-                          <td class="text-danger">
-                            <i class="material-icons">close</i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>dd/mm/aaaa</td>
-                          <td>Notificação 2</td>
-                          <td>5</td>
-                          <td class="text-danger">
-                            <i class="material-icons">close</i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>dd/mm/aaaa</td>
-                          <td>Notificação 3</td>
-                          <td>3</td>
-                          <td class="text-danger">
-                            <i class="material-icons">close</i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>dd/mm/aaaa</td>
-                          <td>Notificação 4</td>
-                          <td>5</td>
-                          <td class="text-danger">
-                            <i class="material-icons">close</i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>5</td>
-                          <td>dd/mm/aaaa</td>
-                          <td>Notificação 5</td>
-                          <td>5</td>
-                          <td class="text-danger">
-                            <i class="material-icons">close</i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            6
-                          </td>
-                          <td>
-                            dd/mm/aaaa
-                          </td>
-                          <td>
-                            Notificação 6
-                          </td>
-                          <td>
-                            3
-                          </td>
-                          <td class="text-danger">
-                            <i class="material-icons">close</i>
-                          </td>
-                        </tr>
+
                       </tbody>
                     </table>
                   </div>
@@ -264,16 +203,16 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <div class="row">
+                  <form class="row" action="" onsubmit="Form.submit(event)">
                     <div class="col-md-5 ml-auto">
                       <div class="form-group label-floating has-primary">
-                        <label class="control-label">Título</label>
-                          <input type="text" class="form-control" />
+                        <label class="control-label" for="title">Título</label>
+                        <input type="text" name="title" id="title" class="form-control" />
                       </div>
                     </div>
                     <div class="col-md-5 mr-auto">
                       <div class="form-group label-floating has-primary">
-                        <label class="control-label" for="date">Descrição</label>
+                        <label class="control-label" for="date">Dia</label>
                         <input 
                           type="date" 
                           name="date" 
@@ -281,19 +220,19 @@
                         />
                       </div>
                     </div>
-                    
+                      
                     <div class="col-md-10 mr-auto ml-auto">
                       <div class="form-group label-floating has-primary">
-                        <label for="Textarea">Mensagem</label>
-                        <textarea class="form-control" id="Textarea" rows="3"></textarea>
+                        <label for="description">Descrição</label>
+                        <textarea class="form-control" id="description" rows="4"></textarea>
                       </div>
                     </div>
 
                     <div class="col-md-10 mr-auto ml-auto mt-3">
                         <div class="form-group label-floating has-primary">
                           <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" value="">
+                            <label for="important" class="form-check-label">
+                                <input id="important" class="form-check-input" type="checkbox" value="">
                                 Importante
                                 <span class="form-check-sign">
                                   <span class="check"></span>
@@ -302,12 +241,13 @@
                           </div>
                       </div>
                     </div>
-
-                  </div>
+                    <div class=" col-md-3 ml-3">
+                    <button type="submit" class=" btn btn-primary">Adicionar</button>
+                    </div>
+                  </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="submit" class="btn btn-primary">Adicionar</button>
+                  <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
                 </div>
               </div>
             </div>
@@ -369,16 +309,18 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
       <!-- Library for adding dinamically elements -->
       <script src="./assets/js/plugins/arrive.min.js"></script>
-      <!--  Google Maps Plugin    -->
-      <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+      <!--  Google Maps Plugin    
+      <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>-->
       <!-- Chartist JS -->
       <script src="./assets/js/plugins/chartist.min.js"></script>
       <!--  Notifications Plugin    -->
       <script src="./assets/js/plugins/bootstrap-notify.js"></script>
       <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
       <script src="./assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+      
       <script src="./assets/demo/demo.js"></script>
       <script src="./assets/js/script.js"></script>
+      
 
     </div>
   </div>
