@@ -69,11 +69,11 @@ const DOM = {
   },
 
 	innerHTMLStudents(item, index) {
-		const { studentName, studentLogin, classRoomName } = item  
+		const { studentName, studentLogin, studentClassRoom } = item  
 		const html = `
     <td>${studentLogin}</td>
     <td>${studentName}</td>
-    <td>${classRoomName}</td>
+    <td>${studentClassRoom}</td>
     <td class="text-danger">
       <button class="btn btn-outline-danger btn-sm">
         <i onclick="Students.remove(${index})" class="material-icons">close</i>
@@ -91,31 +91,31 @@ const DOM = {
 const Form = {
   studentLogin: document.querySelector('input#studentLogin'),
 	studentName: document.querySelector('input#studentName'),
-  classRoomName: document.querySelector('input#classRoomName'),
+  studentClassRoom: document.querySelector('input#studentClassRoom'),
   
   getValues() {
     return {
       studentLogin: this.studentLogin.value,
       studentName: this.studentName.value,
-      classRoomName: this.classRoomName.value,
+      studentClassRoom: this.studentClassRoom.value,
     }
   },
 
   validateFields() {
-    const { studentLogin, studentName, classRoomName } = this.getValues();
+    const { studentLogin, studentName, studentClassRoom } = this.getValues();
 
-    if(studentLogin.trim() === "" || studentName.trim() === "" || classRoomName.trim() === "") {
+    if(studentLogin.trim() === "" || studentName.trim() === "" || studentClassRoom.trim() === "") {
       throw new Error("Preencha os campos necessários")
     }
   },
 
   formatValues() {
-    let { studentLogin, studentName, classRoomName } = this.getValues()
+    let { studentLogin, studentName, studentClassRoom } = this.getValues()
 
     return {
       studentLogin, 
       studentName, 
-      classRoomName
+      studentClassRoom
     }
     
   },
@@ -123,7 +123,7 @@ const Form = {
   clearFields() {
     this.studentLogin.value = ""
     this.studentName.value = ""
-    this.classRoomName.value = ""
+    this.studentClassRoom.value = ""
   },
 
   submit(event) {

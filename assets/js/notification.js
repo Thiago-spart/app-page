@@ -28,8 +28,8 @@ const Utils = {
     const splittedDate = date.split("-");
     return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
   },
-  checkBox(box) {
-    return box !== "" ? "Importante" : ""
+  checkBox(checkBox) {
+    return checkBox !== "" ? "Importante" : ""
   }
 }
 
@@ -45,8 +45,8 @@ const Storage = {
 const Notification = {
 	all: Storage.get(),
 
-	add(notification) {
-    this.all.push(notification)
+	add(item) {
+    this.all.push(item)
 
     App.reload()
   },
@@ -61,16 +61,16 @@ const Notification = {
 const DOM = {
 	container: document.querySelector('#data-table tbody'),
 	
-	newNotification(notification, index) {
-    const tr = document.createElement('tr');
-    tr.dataset.index = index;
-    tr.innerHTML = this.innerHTMLNotification(notification, index);
+	newNotification(item, index) {
+    const tr = document.createElement('tr')
+    tr.dataset.index = index
+    tr.innerHTML = this.innerHTMLNotification(item, index)
     this.container.appendChild(tr)
   },
 
-	innerHTMLNotification(notification, index) {
-		const { title, date, important } = notification
-		const check = notification.important !== "" ? "Importante" : ""  
+	innerHTMLNotification(item, index) {
+		const { title, date, important } = item
+		const check = item.important !== "" ? "Importante" : ""  
 		const html = `
     <td>1</td>
     <td>${date}</td>
@@ -107,7 +107,7 @@ const Form = {
 
   validateFields() {
     const { title, date, description } = this.getValues();
-
+    let msg = ""
     if(title.trim() === "" || date.trim() === "" || description.trim() === "") {
       throw new Error("Preencha os campos necessarios")
     }
